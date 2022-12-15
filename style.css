@@ -1,120 +1,133 @@
-.container{
-  padding:0 30px;
+@font-face {
+  font-family: Roboto;
+  src: url("assets/fonts/Roboto-Regular.ttf");
+}
+*{
+  box-sizing: border-box;
 }
 body{
-  background-color: #faf6f3;
-  color:#000;
-   margin:0 auto;
-  cursor: default;
-}
-body a{
-  text-decoration: none;
-  color: #000;
-}
-body a:hover{
-  color:rgb(117, 15, 15);
-}
-h2, .web, .github a{
-  color:rgb(22 62 38 / 76%);
-}
-header{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
-  align-items: center;
-}
-header img{
-  padding-right: 10px;
-}
-.menu{
-  width: 100%;
-  max-width: 624px;
-  line-height: 78px;
+  /*Применим шрифт наш к сайту*/
+  font-family: "Roboto";
+  /*Установим размер шрифта сайта*/
   font-size: 20px;
+  /*Удалим лишний внешний отсуп*/
+  margin: 0px;
 }
-.social{
-  max-width: 250px;
+/*На нашем сайте в меню видно лишний зелёный отступ..*/
+/*Убрали мы отступы для всех списков, созданных самим браузером*/
+ul{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  /*перемесим удаление точек с подпунктов меню сюда*/
+  list-style-type: none;
+}
+/*Также мы сделаем подсвечивание при наведении на наши ссылки в меню, но для этого тоже нужно отредактировать наш файл html*/
+a{
+  color:black;
+  text-decoration: none; /*Убираем со ссылок линию подчёркивания*/
+}
+a:hover{
+  color:coral; /*Hover используется при наведении*/
+}
+/*Сделаем все наши заголовки h1, h2 по центру*/
+h1, h2{
+  text-align: center;
+}
+/*теперь настроим наши изображения*/
+img{
+  max-width: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
-.social img{
-  max-width: 95%;
+/*Теперь по заданию нам нужно, чтобы весь наш сайт при уменьшении масштаба делался по центру, а не растягивался по бокам*/
+.container{
+  display: block; /*блочный элемент*/
+  margin: 0 auto; /*выравнивание по середине*/
+  max-width: 1800px;
+  width: 100%;
+  padding: 0 15px;
 }
-.main h1{
-  margin:0;  
-  font-size: 28px;
+/*Сделаем внутренний отступ с верху и снизу у шапки сайта*/
+header{
+  padding: 20px 0;
+  /*cделаем наше меню фиксированным при прокрутке страницы*/
+  position: fixed;
+  top: 0;
+  /*добавим цвет*/
+  background-color: #fff;
+  /*теперь видно, что наш header не на всю ширину.. придётся немного переделать html*/
+  width: 100%;
 }
-.main__description p{
-  max-width: 600px;
-}
-.menu nav ul{
+
+/*Делаем сначала этот заголовок невидимым*/
+.header h2{
   display: none;
 }
-nav ul{
-  display: flex;
-  justify-content: space-between;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 0px;
-}
-nav ul li{
-  list-style: none;
-}
-nav ul li a{
-  color:rgb(25, 68, 68);
-}
-.contacts{
-  max-width: 220px;
+/*Сделаем наше меню в строку*/
+.header nav ul{
+  display: flex;  
+  /*Теперь настроим ширину*/
+  max-width: 850px;
   width: 100%;
-  line-height: 78px;
-}
-.contacts img{
-  width:45px;
-}
-.contacts .fa{
-  font-size: 25px;
-  color:#000;
-}
-.person, .phone, .msg{
-  display: flex;
-  align-items: center;
-  color: #000;
-}
-.person img{
-  border-radius: 30%;
-  width:30%;
-}
-footer{
-  align-items: center;
-  display: flex;
+  /*Растяним наше меню по максимальной ширине*/
   justify-content: space-between;
-  border-top: 1px solid #000;
-  padding-top: 10px;
+  /*Сделаем по середине*/
+  margin: 0 auto;
+  padding: 0 15px;
 }
-footer img{
+/*Раз мы сделали нашу шапку сайта фиксированной, то теперь не видно начала нашего контента страницы - заголовка*/
+.about{
+  margin-top: 100px;
+}
+/*Настроим список скилов*/
+.skills nav ul li::before{
+  content: "-";
+  padding-right: 5px;
+}
+/*Before - значит до элемента. Мы установили до пункта - и настроили отступ от - до элемента 5px*/
+
+/*Немного выделим наши контакты*/
+.contacts ul li a span{
+  font-weight: bold;
+}
+/*Настроим наш подвал страницы*/
+/*Cделаем отступы внутренние*/
+.footer{
+  padding: 40px 0;
+  display: flex;/*Делаем отображение строкой*/
+  /*Похоже немного придётся переделать подвал сайта*/
+  width: 100%;
   max-width: 100%;
+  justify-content: space-between;/*Растягиваем на всю ширину*/
+  align-items: center; /*Выравниваем по центру*/
 }
-.rs{
-  max-width: 100px;
+.footer .logo{
+  max-width: 200px;
   width: 100%;
-  margin: 10px 0;
 }
-@media screen and (min-width: 700px){
-  header{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: inherit;
+
+/*Теперь рассмотрим как адаптировать на другие разрешения экрана*/
+@media screen and (max-width: 700px){/*если экран <= 700*/
+  body{
+    font-size: 18px;/*Уменьшаем шрифт сайта*/
   }
 }
-@media screen and (min-width: 1224px){
-  .menu nav ul{
-    display: flex;
+/*Cделаем наше меню в столбик и по центру*/
+@media screen and (max-width: 650px){/*если экран <= 700*/
+  .header nav ul{
+    flex-direction: column; /*делает расположение колонкой*/
+    max-width: 100%;
+    align-items: center; /*текст по центру*/
+  }
+  .about{
+    margin-top: 220px;/*внешний отступ от вершины*/
+  }
+  /*лично мне не хватает названия МЕНЮ*/
+  .header h2{
+    display: block; /*делаем видимым*/
   }
 }
 
+/*всего этого достаточно для защиты задания.. вроде все требования выполнила. потом сами по условиям пересмотрите
+Сейчас сделаю на репозиторий ссылки
+*/

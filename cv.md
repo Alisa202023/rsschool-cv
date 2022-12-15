@@ -3,12 +3,25 @@
 ## **My contacts:**
 * **phone:** +375(33)6784779 
 * **email:** alisa.fedulova2013@gmail.com
+* **instagram:** https://www.instagram.com/alisia_nisen
 
 At the moment, one of my main goals is to learn foreign languages I also want to become a good web-developer in the future. 
 I think one of my greatest strength is as a problem solver.
 
 ## **Technical skills:**
 HTML, CSS, JS, WordPress, SQL
+
+## **Code:** 
+```javascript
+function isDivideBy(number, a, b) {
+  if ( (number % a == 0) & (number % b == 0)) {
+  return true;
+  } else return false;
+}
+```
+
+## **Projects:** 
+I have no projects
 
 ## **Work Experience**
 
